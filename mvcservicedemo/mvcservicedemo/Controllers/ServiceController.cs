@@ -9,6 +9,15 @@ namespace mvcservicedemo.Controllers
 {
     public class ServiceController : Controller
     {
+
+        [Route("~/api/getfinancialdata")]
+        [HttpGet]
+        public ActionResult GetData()
+        {
+            var rep = new Repository();
+            return Json(rep.GetFinancialData(), JsonRequestBehavior.AllowGet);
+        }
+
         [Route("~/api/getaccounts")]
         [HttpGet]
         public ActionResult GetAccounts()
