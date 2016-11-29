@@ -7,18 +7,18 @@ namespace mvcservicedemo.Models
 {
     public class Repository
     {
+        private FinancialData data = new FinancialData() {
+            markedsvardi = 1000,
+            ibd = 750,
+            potLeje = 500,
+            tomgang = 100
+        };
 
         public FinancialData GetFinancialData()
         {
-            FinancialData d = new FinancialData() {
-                markedsvardi = 1000,
-                ibd = 750,
-                potLeje = 500,
-                tomgang = 100
-            };
-
-            return d;
+            return data;
         }
+
         public List<Account> GetAllAccounts()
         {
             var l = new List<Account>();
